@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request, send_from_directory
 from OpenSSL import SSL
+
 context = SSL.Context(SSL.SSLv23_METHOD)
 context.use_privatekey_file('spark.pri')
 context.use_certificate_file('spark.cer')
@@ -25,7 +26,6 @@ def processjscontent(post_id):
     import commands
     fv = commands.getstatusoutput(cmd1)[1]
     return fv
-
 
 @app.route('/users/<user_id>', methods = ['GET', 'POST', 'DELETE'])
 def user(user_id):
@@ -56,16 +56,5 @@ def send_img(path):
     return send_from_directory('img', path)
 
 
-@app.route('/hello/<string:post_id>')
-def fun1(post_id):
-    fh = open("tmp.js","w")
-    fh.write(post_id)
-    fh.close()
-    cmd1 = "python ./exe/run_showfeature.py tmp.js"
-    import commands
-    fv = commands.getstatusoutput(cmd1)[1]
-    return fv
-
 if __name__ == '__main__':
-    #app.run(host='0.0.0.0', port=8080)
     app.run(host='0.0.0.0', port=8080)#,debug=False, ssl_context=context)

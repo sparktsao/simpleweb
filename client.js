@@ -1,5 +1,4 @@
 $("#data").change(function(){
-    //#var myusername = document.getElementById("login").elements["username"].value;
     var testdata = $("#data").val();
     $.ajax({
   	  type: "POST",
@@ -11,14 +10,12 @@ $("#data").change(function(){
              if(data.split("\n").slice(-1)>0.5)
              {
                 document.getElementById("score").style.background='red';
-                document.getElementById("score").value = data.split("\n").slice(-1);
                 document.getElementById("score").innerHTML = "Dangerous, score:"+data.split("\n").slice(-1);
                 console.log(data.split("\n").slice(-1));
              }
              else
              {
                 document.getElementById("score").style.background='green';
-                document.getElementById("score").value = data.split("\n").slice(-1);
                 document.getElementById("score").innerHTML = data.split("\n").slice(-1);
                 console.log(data.split("\n").slice(-1));
              }
