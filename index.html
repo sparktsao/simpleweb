@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style media="screen" type="text/css">
+    .col-center-block {
+    	float: none;
+	    display: block;
+	    margin: 0 auto;
+	    /* margin-left: auto; margin-right: auto; */ 
+    }	
+    </style>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Hello, Malicious JavaScript!</h1>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <form>
+
+<form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleTextarea">Example textarea</label>
+    <label for="exampleTextarea">Edit your javascript codes...</label>
     <textarea class="form-control" id="data" name="data" rows="10"></textarea>
   </div>    
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
   <div class="form-group">
-    <label for="exampleTextarea">Result textarea</label>
+    <label for="exampleTextarea">TrendX analysis...</label>
     <textarea class="form-control" id="resultarea" name="resultarea" rows="10"></textarea>
   </div>
+
+<div class="row">
+    <div class="col-xs-2 col-center-block">row col-xs-2 col-center-block</div>
+</div>
+
   </body>
   <script src="client.js"></script>
 </html>
